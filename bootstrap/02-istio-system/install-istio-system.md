@@ -14,7 +14,7 @@ helm upgrade --install istio-base istio/base \
 ```
 helm upgrade --install istiod istio/istiod \
   -n istio-system \
-  --version 1.30.4 
+  --version 1.30.4 -f istio-istiod.yaml
 ```
 3. Istio CNI
 ```

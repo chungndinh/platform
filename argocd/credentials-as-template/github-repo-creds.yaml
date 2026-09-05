@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: github-repo-creds
+  namespace: argocd
+  labels:
+    argocd.argoproj.io/secret-type: repo-creds
+type: Opaque
+stringData:
+  type: git
+  url: https://github.com/chungndinh
+  username: chungndinh
+  password: <YOUR_GITHUB_PERSONAL_ACCESS_TOKEN>

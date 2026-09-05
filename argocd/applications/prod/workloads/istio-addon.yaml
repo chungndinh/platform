@@ -1,15 +1,15 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: api-gateway
+  name: istio-addon
   namespace: argocd
 spec:
   project: workloads
 
   source:
-    repoURL: https://github.com/chungndinh/api-gateway.git
+    repoURL: https://github.com/chungndinh/platform.git
     targetRevision: main
-    path: prod
+    path: istio/prod/httproute
 
   destination:
     server: https://kubernetes.default.svc
