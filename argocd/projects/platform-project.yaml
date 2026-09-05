@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: platform
+  namespace: argocd
+
+spec:
+  description: Platform components
+
+  sourceRepos:
+    - https://github.com/chungndinh/platform.git
+    - https://kyverno.github.io/kyverno/
+    - https://helm.releases.hashicorp.com
+    # thêm Helm repo khác khi cần
+
+  destinations:
+    - name: '*'
+      namespace: '*'
+
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+
+  namespaceResourceWhitelist:
+    - group: '*'
+      kind: '*'
