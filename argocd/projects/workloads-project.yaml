@@ -8,6 +8,7 @@ spec:
   description: Workloads components
 
   sourceRepos:
+    - https://github.com/chungndinh/platform.git
     - https://github.com/chungndinh/api-gateway.git
     - https://github.com/chungndinh/frontend.git
     - https://github.com/chungndinh/user-service.git
