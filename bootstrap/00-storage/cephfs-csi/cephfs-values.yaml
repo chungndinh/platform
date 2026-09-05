@@ -1,0 +1,40 @@
+# cephfs-values.yaml
+
+# 1. Ceph cluster config
+csiConfig:
+  - clusterID: "cf594a32-0739-11f0-a3b2-a7a9a21b26b7"
+    monitors:
+      - "10.0.2.1:6789"
+      - "10.0.2.2:6789"
+      - "10.0.2.3:6789"
+
+# 2. Chart tự quản lý ConfigMap
+externallyManagedConfigmap: false
+configMapName: ceph-csi-config
+
+# 3. Secret (nếu bạn đã tạo trước bằng kubectl, để create: false)
+secret:
+  create: true
+  name: csi-cephfs-secret
+  # userID: cephfsuser
+  # userKey: AQDOuflnGL/hLRAAxqMk7Fec26XdiU44VQHaGw==
+  userID: admin
+  userKey: AQA15N5nPcz9JRAA9LasjlraSNF4Srmo1c+Heg==
+
+# 4. StorageClass (trường trực tiếp, không phải under parameters)
+storageClass:
+  create: true
+  name: csi-cephfs
+  clusterID: cf594a32-0739-11f0-a3b2-a7a9a21b26b7        # direct field, không phải parameters :contentReference[oaicite:1]{index=1}
+  fsName: cephfs                                         # direct field :contentReference[oaicite:2]{index=2}
+  pool: cephfs_data                                      # direct field :contentReference[oaicite:3]{index=3}
+  provisionerSecret: csi-cephfs-secret
+  provisionerSecretNamespace: kube-system
+  controllerExpandSecret: csi-cephfs-secret
+  controllerExpandSecretNamespace: kube-system
+  nodeStageSecret: csi-cephfs-secret
+  nodeStageSecretNamespace: kube-system
+  reclaimPolicy: Retain
+  allowVolumeExpansion: true
+  mountOptions:
+    - debug

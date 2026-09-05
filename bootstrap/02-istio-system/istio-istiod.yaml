@@ -1,0 +1,5 @@
+_internal_defaults_do_not_set:
+  #...
+  env:
+    PILOT_ENABLE_AMBIENT: true
+    PILOT_ENABLE_AMBIENT_WAYPOINTS: true

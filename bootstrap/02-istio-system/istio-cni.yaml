@@ -1,0 +1,3 @@
+  ambient:
+    # If enabled, ambient redirection will be enabled
+    enabled: true

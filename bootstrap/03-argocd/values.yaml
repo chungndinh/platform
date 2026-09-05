@@ -1,0 +1,26 @@
+global:
+  domain: argocd.chungndinh.com
+configs:
+  params:
+    server.insecure: true
+
+server:
+  replicas: 1
+
+  ingress:
+    enabled: false
+
+repoServer:
+  replicas: 1
+
+applicationSet:
+  replicas: 1
+
+controller:
+  replicas: 1
+
+redis:
+  enabled: true
+
+redis-ha:
+  enabled: false
