@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: workloads
+  namespace: argocd
+
+spec:
+  description: Workloads components
+
+  sourceRepos:
+    - https://github.com/chungndinh/api-gateway.git
+    - https://github.com/chungndinh/frontend.git
+    - https://github.com/chungndinh/user-service.git
+    - https://github.com/chungndinh/order-service.git
+    # thêm Helm repo khác khi cần
+
+  destinations:
+    - name: '*'
+      namespace: '*'
+
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+
+  namespaceResourceWhitelist:
+    - group: '*'
+      kind: '*'

@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: api-gateway
+  namespace: argocd
+spec:
+  project: workloads
+
+  source:
+    repoURL: https://github.com/chungndinh/api-gateway.git
+    targetRevision: main
+    path: prod
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: middle
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+
+    syncOptions:
+      - CreateNamespace=true
