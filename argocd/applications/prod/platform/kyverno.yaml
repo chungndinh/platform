@@ -16,9 +16,9 @@ spec:
       targetRevision: 3.6.2
       helm:
         valueFiles:
-          - $values/argocd/values/kyverno/values.yaml
+          - $values/argocd/values/prod/platform/kyverno/values.yaml
 
-    - repoURL: https://github.com/YOUR_ORG/platform.git
+    - repoURL: https://github.com/chungndinh/platform.git
       targetRevision: main
       ref: values
 
