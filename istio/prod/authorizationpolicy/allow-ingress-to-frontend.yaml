@@ -2,7 +2,7 @@ apiVersion: security.istio.io/v1
 kind: AuthorizationPolicy
 metadata:
   name: allow-ingress-to-frontend
-  namespace: frontend
+  namespace: app
 spec:
   selector:
     matchLabels:
