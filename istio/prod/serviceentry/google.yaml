@@ -9,7 +9,8 @@ spec:
   hosts:
   - google.com
   - www.google.com
-
+  - google.com.vn
+  - www.google.com.vn
   ports:
   - number: 443
     name: tls-https
