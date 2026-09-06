@@ -1,0 +1,18 @@
+apiVersion: security.istio.io/v1
+kind: AuthorizationPolicy
+metadata:
+  name: allow-user-service-to-postgresql
+  namespace: istio-egress
+spec:
+  targetRefs:
+    - kind: ServiceEntry
+      group: networking.istio.io
+      name: external-postgresql
+
+  action: ALLOW
+
+  rules:
+    - from:
+        - source:
+            principals:
+              - cluster.local/ns/app/sa/user-service

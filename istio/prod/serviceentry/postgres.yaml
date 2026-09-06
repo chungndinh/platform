@@ -2,7 +2,9 @@ apiVersion: networking.istio.io/v1
 kind: ServiceEntry
 metadata:
   name: external-postgresql
-  namespace: app
+  namespace: istio-egress
+  labels:
+    istio.io/use-waypoint: egress-waypoint
 spec:
   hosts:
     - external-postgresql
