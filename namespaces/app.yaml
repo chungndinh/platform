@@ -4,3 +4,4 @@ metadata:
   name: app
   labels:
     istio.io/dataplane-mode: ambient
+    workload: "true"
