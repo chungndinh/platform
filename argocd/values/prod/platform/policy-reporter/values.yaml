@@ -1,0 +1,13 @@
+
+ui:
+  enabled: true
+  clusters:
+    - name: Default
+      host: http://policy-reporter:8080
+      plugins:
+        - name: kyverno
+          host: http://policy-reporter-kyverno-plugin:8080
+
+plugin:
+  kyverno:
+    enabled: true
