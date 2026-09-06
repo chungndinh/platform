@@ -4,4 +4,6 @@ metadata:
   name: app
   labels:
     istio.io/dataplane-mode: ambient
+    gateway.networking.k8s.io/gateway-name: waypoint
     workload: "true"
+        
