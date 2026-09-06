@@ -10,6 +10,7 @@ spec:
   sourceRepos:
     - https://github.com/chungndinh/platform.git
     - https://kyverno.github.io/kyverno/
+    - https://kyverno.github.io/policy-reporter
     - https://helm.releases.hashicorp.com
     # thêm Helm repo khác khi cần
 
