@@ -4,7 +4,7 @@ pilot:
     PILOT_ENABLE_AMBIENT_WAYPOINTS: "true"
 
 
-# Khai báo để chặn traffic đi ra ngoài external nếu chưa khai báo ServiceEntry
-meshConfig:
-  outboundTrafficPolicy:
-    mode: REGISTRY_ONLY
+# # Khai báo để chặn traffic đi ra ngoài external nếu chưa khai báo ServiceEntry
+# meshConfig:
+#   outboundTrafficPolicy:
+#     mode: REGISTRY_ONLY
