@@ -1,13 +1,13 @@
 apiVersion: security.istio.io/v1
 kind: AuthorizationPolicy
 metadata:
-  name: allow-user-service-to-postgresql
+  name: allow-user-service-to-google
   namespace: istio-egress
 spec:
   targetRefs:
     - kind: ServiceEntry
       group: networking.istio.io
-      name: external-postgresql
+      name: external-google
 
   action: ALLOW
 

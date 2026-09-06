@@ -1,0 +1,39 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: deny-external-egress
+  namespace: middle
+spec:
+  podSelector: {}
+  policyTypes:
+  - Egress
+
+  egress:
+
+  # DNS
+  - to:
+    - namespaceSelector:
+        matchLabels:
+          kubernetes.io/metadata.name: kube-system
+    ports:
+    - protocol: UDP
+      port: 53
+    - protocol: TCP
+      port: 53
+
+  # Internal mesh traffic
+  - to:
+    - namespaceSelector: {}
+
+  # HBONE to egress waypoint
+  - to:
+    - namespaceSelector:
+        matchLabels:
+          kubernetes.io/metadata.name: istio-egress
+      podSelector:
+        matchLabels:
+          gateway.networking.k8s.io/gateway-name: egress-waypoint
+    ports:
+    - protocol: TCP
+      port: 15008
+      

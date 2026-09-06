@@ -7,13 +7,17 @@ metadata:
     istio.io/use-waypoint: egress-waypoint
 spec:
   hosts:
-    - external-postgresql.local
+  - external-postgresql.local
+
   addresses:
-    - 10.0.3.1/32
+  - 10.0.3.1/32
 
   ports:
-    - number: 5432
-      name: tcp-postgresql
-      protocol: TCP
+  - number: 5432
+    name: tcp-postgresql
+    protocol: TCP
 
-  resolution: NONE
+  resolution: STATIC
+
+  endpoints:
+  - address: 10.0.3.1

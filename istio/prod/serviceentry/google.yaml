@@ -1,0 +1,18 @@
+apiVersion: networking.istio.io/v1
+kind: ServiceEntry
+metadata:
+  name: external-google
+  namespace: istio-egress
+  labels:
+    istio.io/use-waypoint: egress-waypoint
+spec:
+  hosts:
+  - google.com
+  - www.google.com
+
+  ports:
+  - number: 443
+    name: tls-https
+    protocol: TLS
+
+  resolution: DNS
