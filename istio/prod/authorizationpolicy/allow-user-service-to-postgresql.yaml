@@ -12,7 +12,7 @@ spec:
   action: ALLOW
 
   rules:
-    - from:
-        - source:
-            principals:
-              - cluster.local/ns/app/sa/user-service
+  - from:
+    - source:
+        principals:
+        - cluster.local/ns/app/sa/user-service
