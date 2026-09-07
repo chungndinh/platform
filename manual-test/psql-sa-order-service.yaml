@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: psql-sa-order-service
+  namespace: app
+spec:
+  serviceAccountName: order-service
+  containers:
+  - name: psql
+    image: postgres:16-alpine
+    command:
+    - sleep
+    - "36000"    
+  restartPolicy: Never

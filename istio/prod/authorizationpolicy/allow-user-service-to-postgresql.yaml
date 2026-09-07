@@ -16,4 +16,4 @@ spec:
     - source:
         principals:
         - cluster.local/ns/app/sa/user-service
-        - cluster.local/ns/app/sa/order-service
+        # - cluster.local/ns/app/sa/order-service
