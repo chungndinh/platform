@@ -1,0 +1,20 @@
+apiVersion: networking.istio.io/v1
+kind: ServiceEntry
+metadata:
+  name: external-stats
+  namespace: istio-egress
+  labels:
+    istio.io/use-waypoint: egress-waypoint
+spec:
+  hosts:
+    - external-stats.local
+
+  addresses:
+    - 10.0.5.1/32
+
+  ports:
+    - number: 8404
+      name: http
+      protocol: HTTP
+
+  resolution: NONE

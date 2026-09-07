@@ -1,0 +1,19 @@
+apiVersion: security.istio.io/v1
+kind: AuthorizationPolicy
+metadata:
+  name: allow-user-service-to-stats
+  namespace: istio-egress
+spec:
+  targetRefs:
+    - kind: ServiceEntry
+      group: networking.istio.io
+      name: external-stats
+
+  action: ALLOW
+
+  rules:
+  - from:
+    - source:
+        principals:
+        - cluster.local/ns/app/sa/user-service
+        # - cluster.local/ns/app/sa/order-service
