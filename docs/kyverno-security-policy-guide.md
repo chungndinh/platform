@@ -1095,3 +1095,9 @@ kubectl delete clusterpolicyreports --all
 # Check workload label
 kubectl get ns policy-test --show-labels
 ```
+
+
+# 21. Best practise policy
+```
+https://github.com/kyverno/policies/tree/main/best-practices
+```
